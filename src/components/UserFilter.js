@@ -13,7 +13,7 @@ import {
   ControlledField,
   TextInput,
   formatMessage,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { DEFAULT, RIGHT_HEALTHFACILITIES } from "../constants";
 
 const styles = (theme) => ({

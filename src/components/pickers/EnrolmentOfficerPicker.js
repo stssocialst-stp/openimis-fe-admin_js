@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Autocomplete, withModulesManager } from "@openimis/fe-core";
+import { Autocomplete, withModulesManager } from "@stssocialst-stp/fe-core";
 import { fetchEnrolmentOfficers } from "../../actions";
 import { DEFAULT } from "../../constants";
 

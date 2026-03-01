@@ -11,7 +11,7 @@ import {
   PinDrop,
   Tune,
 } from "@material-ui/icons";
-import { FormattedMessage } from "@openimis/fe-core";
+import { FormattedMessage } from "@stssocialst-stp/fe-core";
 import AdminMainMenu from "./components/AdminMainMenu";
 import UsersPage from "./pages/UsersPage";
 import UserPage from "./pages/UserPage";

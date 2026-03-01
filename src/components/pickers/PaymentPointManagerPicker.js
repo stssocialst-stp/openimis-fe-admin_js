@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { TextField } from "@material-ui/core";
 
-import { useGraphqlQuery, useTranslations, Autocomplete } from "@openimis/fe-core";
+import { useGraphqlQuery, useTranslations, Autocomplete } from "@stssocialst-stp/fe-core";
 import { USER_PICKER_PROJECTION } from "../../actions";
 
 function PaymentPointManagerPicker({

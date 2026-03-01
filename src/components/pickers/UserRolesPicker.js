@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useGraphqlQuery, useTranslations, Autocomplete } from "@openimis/fe-core";
+import { useGraphqlQuery, useTranslations, Autocomplete } from "@stssocialst-stp/fe-core";
 
 const UserRolesPicker = ({
   readOnly,

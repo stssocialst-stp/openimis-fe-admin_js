@@ -15,7 +15,7 @@ import {
   formatDateFromISO,
   ConfirmDialog,
   decodeId,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { fetchUsersSummaries, deleteUser } from "../actions";
 import { DEFAULT, RIGHT_USER_DELETE } from "../constants";
 import UserFilter from "./UserFilter";

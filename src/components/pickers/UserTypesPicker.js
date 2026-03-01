@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useIntl } from "react-intl";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import TextField from "@material-ui/core/TextField";
-import { formatMessage } from "@openimis/fe-core";
+import { formatMessage } from "@stssocialst-stp/fe-core";
 
 import { USER_TYPES } from "../../constants";
 

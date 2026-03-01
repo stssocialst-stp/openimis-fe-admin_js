@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { withModulesManager, combine, useTranslations, PublishedComponent, ProgressOrError } from "@openimis/fe-core";
+import { withModulesManager, combine, useTranslations, PublishedComponent, ProgressOrError } from "@stssocialst-stp/fe-core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { withTheme, withStyles } from "@material-ui/core/styles";
 import { useDispatch, useSelector } from "react-redux";

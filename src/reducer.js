@@ -6,7 +6,7 @@ import {
   dispatchMutationResp,
   dispatchMutationErr,
   dispatchMutationReq,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { checkRolesAndGetUserTypes, mapQueriesUserToStore } from "./utils";
 
 function reducer(

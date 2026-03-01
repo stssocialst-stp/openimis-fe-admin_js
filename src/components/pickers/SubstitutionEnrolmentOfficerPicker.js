@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { TextField } from "@material-ui/core";
 
-import { withModulesManager, Autocomplete, useTranslations } from "@openimis/fe-core";
+import { withModulesManager, Autocomplete, useTranslations } from "@stssocialst-stp/fe-core";
 import { fetchSubstitutionEOs } from "../../utils";
 import { DEFAULT } from "../../constants";
 

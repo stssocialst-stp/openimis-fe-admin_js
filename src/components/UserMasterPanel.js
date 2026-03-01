@@ -15,7 +15,7 @@ import {
   ValidatedTextInput,
   passwordGenerator,
   validatePassword,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { CLAIM_ADMIN_USER_TYPE, ENROLMENT_OFFICER_USER_TYPE, EMAIL_REGEX_PATTERN, DEFAULT, RIGHT_HEALTHFACILITIES } from "../constants";
 import {
   usernameValidationCheck,

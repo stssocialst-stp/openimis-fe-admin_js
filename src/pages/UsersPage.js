@@ -14,7 +14,7 @@ import {
   withTooltip,
   formatMessage,
   clearCurrentPaginationPage,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { RIGHT_USER_ADD, MODULE_NAME } from "../constants";
 import UserSearcher from "../components/UserSearcher";
 

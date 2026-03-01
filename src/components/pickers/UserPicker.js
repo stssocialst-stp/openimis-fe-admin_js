@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { withTheme, withStyles } from "@material-ui/core/styles";
 import { Autocomplete } from "@material-ui/lab";
 import { TextField } from "@material-ui/core";
-import { withModulesManager, useDebounceCb, useTranslations } from "@openimis/fe-core";
+import { withModulesManager, useDebounceCb, useTranslations } from "@stssocialst-stp/fe-core";
 import { fetchUsers } from "../../actions";
 import { DEFAULT } from "../../constants";
 

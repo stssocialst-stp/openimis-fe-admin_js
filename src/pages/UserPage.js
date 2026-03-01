@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withTheme, withStyles } from "@material-ui/core/styles";
-import { withModulesManager, combine, withHistory, historyPush, useTranslations } from "@openimis/fe-core";
+import { withModulesManager, combine, withHistory, historyPush, useTranslations } from "@stssocialst-stp/fe-core";
 import UserForm from "../components/UserForm";
 import { createUser, updateUser } from "../actions";
 import { RIGHT_USER_ADD, RIGHT_USER_EDIT } from "../constants";

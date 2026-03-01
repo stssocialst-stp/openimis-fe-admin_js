@@ -13,7 +13,7 @@ import {
   PinDrop,
   Tune,
 } from "@material-ui/icons";
-import { formatMessage, MainMenuContribution, withModulesManager } from "@openimis/fe-core";
+import { formatMessage, MainMenuContribution, withModulesManager } from "@stssocialst-stp/fe-core";
 import {
   RIGHT_PRODUCTS,
   RIGHT_HEALTHFACILITIES,

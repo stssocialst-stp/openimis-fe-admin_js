@@ -7,7 +7,7 @@ import {
   prepareMutation,
   graphqlWithVariables,
   fetchMutation,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { mapUserValuesToInput } from "./utils";
 
 const USER_SUMMARY_PROJECTION = [

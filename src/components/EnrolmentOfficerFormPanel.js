@@ -10,7 +10,7 @@ import {
   PublishedComponent,
   TextInput,
   useGraphqlQuery,
-} from "@openimis/fe-core";
+} from "@stssocialst-stp/fe-core";
 import { ENROLMENT_OFFICER_USER_TYPE, OFFICER_ROLE_IS_SYSTEM } from "../constants";
 import { toggleUserRoles, toggleSwitchButton } from "../utils";
 import EnrolmentVillagesPicker from "./EnrolmentVillagesPicker";

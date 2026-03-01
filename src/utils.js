@@ -1,4 +1,4 @@
-import { decodeId } from "@openimis/fe-core";
+import { decodeId } from "@stssocialst-stp/fe-core";
 import { fetchSubstitutionEnrolmentOfficers } from "./actions";
 import {
   CLAIM_ADMIN_USER_TYPE,
