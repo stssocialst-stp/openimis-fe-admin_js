@@ -384,3 +384,97 @@ export function saveEmailFormatValidity(isFormatInvalid) {
     dispatch({ type: "USER_EMAIL_FORMAT_VALIDATION_CHECK", payload: { data: { isFormatInvalid } } });
   };
 }
+
+// ─── Roles & Permissions helpers (direct fetch, PRL pattern) ───
+
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+
+async function gqlFetch(query, variables = {}) {
+  // eslint-disable-next-line no-eval
+  const { baseApiUrl, apiHeaders } = require("@stssocialst-stp/fe-core");
+  const response = await fetch(`${baseApiUrl}/graphql`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": getCookie("csrftoken"),
+      ...apiHeaders(),
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+  if (!response.ok) throw new Error("Network response was not ok");
+  const result = await response.json();
+  if (result.errors) throw new Error(result.errors.map((e) => e.message).join("; "));
+  return result.data;
+}
+
+// ── Queries ──
+
+export async function fetchPermissoesDisponiveis(modulo) {
+  const arg = modulo ? `(modulo: "${modulo}")` : "";
+  const data = await gqlFetch(`{ permissoesDisponiveis${arg} { rightId nome modulo } }`);
+  return data.permissoesDisponiveis;
+}
+
+export async function fetchPermissoesDoRole(roleId) {
+  const data = await gqlFetch(`{ permissoesDoRole(roleId: "${roleId}") { id rightId } }`);
+  return data.permissoesDoRole;
+}
+
+export async function fetchRolesDoUtilizador(userId) {
+  const data = await gqlFetch(`{ rolesDoUtilizador(userId: "${userId}") { id nome } }`);
+  return data.rolesDoUtilizador;
+}
+
+export async function fetchAllRoles() {
+  const data = await gqlFetch(`{ role { edges { node { id name isSystem } } } }`);
+  return (data.role?.edges || []).map((e) => e.node);
+}
+
+export async function fetchAllUsers() {
+  const data = await gqlFetch(`{ users { edges { node { id username iUser { id lastName otherNames } } } } }`);
+  return (data.users?.edges || []).map((e) => e.node);
+}
+
+// ── Mutations ──
+
+export async function adicionarPermissaoAoRole(roleId, rightId) {
+  const data = await gqlFetch(
+    `mutation { adicionarPermissaoAoRole(roleId: "${roleId}", rightId: ${rightId}) { ok errors } }`,
+  );
+  return data.adicionarPermissaoAoRole;
+}
+
+export async function removerPermissaoDoRole(roleId, rightId) {
+  const data = await gqlFetch(
+    `mutation { removerPermissaoDoRole(roleId: "${roleId}", rightId: ${rightId}) { ok errors } }`,
+  );
+  return data.removerPermissaoDoRole;
+}
+
+export async function atribuirRoleAoUtilizador(userId, roleId) {
+  const data = await gqlFetch(
+    `mutation { atribuirRoleAoUtilizador(userId: "${userId}", roleId: "${roleId}") { ok errors } }`,
+  );
+  return data.atribuirRoleAoUtilizador;
+}
+
+export async function removerRoleDoUtilizador(userId, roleId) {
+  const data = await gqlFetch(
+    `mutation { removerRoleDoUtilizador(userId: "${userId}", roleId: "${roleId}") { ok errors } }`,
+  );
+  return data.removerRoleDoUtilizador;
+}
+

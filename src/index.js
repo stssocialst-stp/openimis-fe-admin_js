@@ -15,6 +15,7 @@ import { FormattedMessage } from "@stssocialst-stp/fe-core";
 import AdminMainMenu from "./components/AdminMainMenu";
 import UsersPage from "./pages/UsersPage";
 import UserPage from "./pages/UserPage";
+import RolePermissionsPage from "./pages/RolePermissionsPage";
 import messagesEn from "./translations/en.json";
 import UserPicker from "./components/pickers/UserPicker";
 import EnrolmentOfficerPicker from "./components/pickers/EnrolmentOfficerPicker";
@@ -35,6 +36,7 @@ import {
   // RIGHT_CLAIMADMINISTRATOR,
   RIGHT_USERS,
   RIGHT_LOCATIONS,
+  ROUTE_ADMIN_ROLE_PERMISSIONS,
 } from "./constants";
 
 const ROUTE_ADMIN_USERS = "admin/users";
@@ -51,6 +53,7 @@ const DEFAULT_CONFIG = {
       path: `${ROUTE_ADMIN_USER_OVERVIEW}/:user_id`,
       component: UserPage,
     },
+    { path: ROUTE_ADMIN_ROLE_PERMISSIONS, component: RolePermissionsPage },
   ],
   "core.MainMenu": [{ name: "AdminMainMenu", component: AdminMainMenu }],
   refs: [

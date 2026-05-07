@@ -12,6 +12,7 @@ import {
   People,
   PinDrop,
   Tune,
+  Security,
 } from "@material-ui/icons";
 import { formatMessage, MainMenuContribution, withModulesManager } from "@stssocialst-stp/fe-core";
 import {
@@ -25,6 +26,8 @@ import {
   // RIGHT_CLAIMADMINISTRATOR,
   RIGHT_USERS,
   RIGHT_LOCATIONS,
+  RIGHT_ROLES_PERMISSIONS,
+  ROUTE_ADMIN_ROLE_PERMISSIONS,
 } from "../constants";
 
 const ADMIN_MAIN_MENU_CONTRIBUTION_KEY = "admin.MainMenu";
@@ -134,6 +137,15 @@ class AdminMainMenu extends Component {
         icon: <PinDrop />,
         route: "/location/locations",
         id: "admin.locations",
+      });
+    }
+    if (rights.includes(RIGHT_ROLES_PERMISSIONS)) {
+      entries.push({
+        text: formatMessage(this.props.intl, "admin", "menu.rolePermissions"),
+        icon: <Security />,
+        route: "/" + ROUTE_ADMIN_ROLE_PERMISSIONS,
+        withDivider: true,
+        id: "admin.rolePermissions",
       });
     }
 

@@ -14,6 +14,9 @@ export const RIGHT_USER_SEARCH = 121701;
 export const RIGHT_USER_ADD = 121702;
 export const RIGHT_USER_EDIT = 121703;
 export const RIGHT_USER_DELETE = 121704;
+export const RIGHT_ROLES_PERMISSIONS = 122003;
+
+export const ROUTE_ADMIN_ROLE_PERMISSIONS = "admin/rolePermissions";
 
 export const INTERACTIVE_USER_TYPE = "INTERACTIVE";
 export const ENROLMENT_OFFICER_USER_TYPE = "OFFICER";
