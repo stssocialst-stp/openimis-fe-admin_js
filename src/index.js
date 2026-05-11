@@ -17,6 +17,7 @@ import UsersPage from "./pages/UsersPage";
 import UserPage from "./pages/UserPage";
 import RolePermissionsPage from "./pages/RolePermissionsPage";
 import messagesEn from "./translations/en.json";
+import messagesPt from "./translations/pt.json";
 import UserPicker from "./components/pickers/UserPicker";
 import EnrolmentOfficerPicker from "./components/pickers/EnrolmentOfficerPicker";
 import SubstitutionEnrolmentOfficerPicker from "./components/pickers/SubstitutionEnrolmentOfficerPicker";
@@ -44,7 +45,10 @@ const ROUTE_ADMIN_USER_OVERVIEW = "admin/users/overview";
 const ROUTE_ADMIN_USER_NEW = "admin/users/new";
 
 const DEFAULT_CONFIG = {
-  translations: [{ key: "en", messages: messagesEn }],
+  translations: [
+    { key: "en", messages: messagesEn },
+    { key: "pt", messages: messagesPt },
+  ],
   reducers: [{ key: "admin", reducer }],
   "core.Router": [
     { path: ROUTE_ADMIN_USERS, component: UsersPage },

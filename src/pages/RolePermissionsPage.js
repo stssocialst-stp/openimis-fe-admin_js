@@ -325,7 +325,7 @@ function RolesPermissionsTab({ classes, intl }) {
                 onClick={() => handleSelectRole(role)}
                 className={selectedRole?.id === role.id ? classes.selectedRole : ""}
               >
-                <ListItemText primary={role.name} secondary={role.isSystem ? "System" : ""} />
+                <ListItemText primary={role.name} secondary={role.isSystem ? formatMessage(intl, "admin", "rolePerms.systemRole") : ""} />
               </ListItem>
             ))}
             {filteredRoles.length === 0 && (
@@ -618,7 +618,7 @@ function UserRolesTab({ classes, intl }) {
               >
                 <ListItemText
                   primary={getUserDisplayName(user)}
-                  secondary={user.iUser ? `iUser ID: ${decodeId(user.iUser.id)}` : "No iUser"}
+                  secondary={user.iUser ? `iUser ID: ${decodeId(user.iUser.id)}` : formatMessage(intl, "admin", "rolePerms.noIUserSecondary")}
                 />
               </ListItem>
             ))}

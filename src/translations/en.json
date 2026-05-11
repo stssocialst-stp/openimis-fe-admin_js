@@ -120,5 +120,7 @@
   "admin.rolePerms.allRolesAssigned": "All available roles are already assigned to this user.",
   "admin.rolePerms.roleAdded": "Role assigned successfully",
   "admin.rolePerms.roleRemoved": "Role removed successfully",
-  "admin.rolePerms.cancel": "Cancel"
+  "admin.rolePerms.cancel": "Cancel",
+  "admin.rolePerms.systemRole": "System",
+  "admin.rolePerms.noIUserSecondary": "No iUser"
 }
